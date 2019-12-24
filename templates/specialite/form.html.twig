@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}Specialite{% endblock %}
+
+{% block body %}
+
+<br>
+<br>
+
+{{form_start(form)}}
+
+{{form_widget(form)}}
+<br>
+<button type="submit" class="btn btn-primary" > Ajouter </button>
+
+{{form_end(form)}}
+
+
+{% endblock %}

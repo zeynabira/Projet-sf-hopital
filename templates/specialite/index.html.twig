@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+ 
+  
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>libelle</th>
+             <th>service</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+{% for specialite in specialites %}
+        <tr>
+            <td>{{specialite.id}}</td>
+            <td>{{specialite.libelle}}</td>
+            <td>{{specialite.service.libelle}}</td>
+            <td>
+                <button type="submit" ><a href="{{path('specialite.specialite.edit',{'id':specialite.id})}}"> Modifier</a></button>
+                <button type="submit" ><a href="{{path('specialite.specialite.delete',{'id':specialite.id})}}"> Supprimer</a></button>
+            </td>
+        </tr>
+{% endfor %}
+
+    </tbody>
+</table>
+ <button type="submit" ><a href="{{path('specialite.specialite.add')}}"> Ajouter</a></button>
+ <button type="submit" ><a href="/"> Retour</a></button>
+   
+       
+{% endblock %}
